@@ -45,7 +45,7 @@ public class BookServiceImpl implements BookService{
     public ResponseEntity deleteBookById(long id) {
         Book existingBook=bookRepository.findById(id).orElseThrow(null);
 
-        bookRepository.deleteById(id);
+        bookRepository.delete(existingBook);
 
         return new ResponseEntity(existingBook,HttpStatus.OK);
     }
