@@ -3,25 +3,19 @@ package com.ozeeesoftware.bookstore.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-@Document(collection = "book")
-public class Book {
+@Document(collection = "author")
+public class Author {
 
-    @Id
-    private long id;
+    private String firstName;
 
-    private String name;
+    private String lastName;
 
-    private Author author;
-
-    private double price;
-
-    private String genre;
+    private String nationality;
 
 }

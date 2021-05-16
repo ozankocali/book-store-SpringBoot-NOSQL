@@ -37,16 +37,23 @@ public class BookServiceImpl implements BookService{
 
         existingBook.setName(book.getName());
         existingBook.setAuthor(book.getAuthor());
+        existingBook.setGenre(book.getGenre());
+        existingBook.setPrice(book.getPrice());
 
         return new ResponseEntity<Book>(bookRepository.save(existingBook),HttpStatus.OK);
     }
 
     @Override
-    public ResponseEntity deleteBookById(long id) {
+    public ResponseEntity<Book> deleteBookById(long id) {
         Book existingBook=bookRepository.findById(id).orElseThrow(null);
 
         bookRepository.delete(existingBook);
 
-        return new ResponseEntity(existingBook,HttpStatus.OK);
+        return new ResponseEntity<Book>(existingBook,HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<List<Book>> filterByPrice(int maxPrice) {
+        return new ResponseEntity<List<Book>>(bookRepository.findByPriceLessThan(maxPrice),HttpStatus.OK);
     }
 }

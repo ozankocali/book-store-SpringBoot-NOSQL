@@ -40,5 +40,10 @@ public class BookController {
         return bookService.deleteBookById(id);
     }
 
+    @GetMapping("/price/{maxPrice}")
+    public ResponseEntity<List<Book>> filterByPrice(@PathVariable int maxPrice){
+        return bookService.filterByPrice(maxPrice);
+    }
+
 
 }

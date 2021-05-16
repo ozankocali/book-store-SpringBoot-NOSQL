@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"Twenty-Four Hours in the Life of a Woman\",\r\n    \"author\":\"Stefan Zweig\"\r\n}",
+					"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"Twenty-Four Hours in the Life of a Woman\",\r\n    \"author\":{\r\n        \"firstName\":\"Stefan\",\r\n        \"lastName\":\"Zweig\"\r\n    },\r\n    \"price\":10,\r\n    \"genre\":\"fiction\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -87,7 +87,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"Letter from an Unknown Woman\",\r\n    \"author\":\"Stefan Zweig\"\r\n}",
+					"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"Letter from an Unknown Woman\",\r\n    \"author\":{\r\n        \"firstName\":\"Stefan\",\r\n        \"lastName\":\"Zweig\",\r\n        \"nationality\":\"Austrian\"\r\n    },\r\n    \"price\":10,\r\n    \"genre\":\"drama\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -129,6 +129,29 @@
 						"book",
 						"delete",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Books by Price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/book/price/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"book",
+						"price",
+						"20"
 					]
 				}
 			},

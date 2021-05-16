@@ -10,5 +10,6 @@ public interface BookService {
     ResponseEntity createBook(Book book);
     ResponseEntity updateBook(Book book);
     ResponseEntity deleteBookById(long id);
+    ResponseEntity filterByPrice(int maxPrice);
 
 }
