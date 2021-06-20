@@ -9,10 +9,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static com.ozeeesoftware.bookstore.model.Book.*;
+
 @Service
 public class BookServiceImpl implements BookService{
     @Autowired
     private BookRepository bookRepository;
+
+    @Autowired
+    private SequenceServiceImpl sequenceService;
 
 
     @Override
@@ -27,6 +32,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public ResponseEntity<Book> createBook(Book book) {
+        book.setId(sequenceService.getSequenceNumber(SEQUENCE_NAME));
         return new ResponseEntity<Book>(bookRepository.save(book),HttpStatus.OK) ;
     }
 
