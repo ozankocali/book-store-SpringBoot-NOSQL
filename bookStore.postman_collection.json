@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"Twenty-Four Hours in the Life of a Woman\",\r\n    \"author\":{\r\n        \"firstName\":\"Stefan\",\r\n        \"lastName\":\"Zweig\"\r\n    },\r\n    \"price\":10,\r\n    \"genre\":\"fiction\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Twenty-Four Hours in the Life of a Woman\",\r\n    \"author\":{\r\n        \"firstName\":\"Stefan\",\r\n        \"lastName\":\"Zweig\",\r\n        \"nationality\":\"Austrian\"\r\n    },\r\n    \"price\":10,\r\n    \"genre\":\"fiction\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
